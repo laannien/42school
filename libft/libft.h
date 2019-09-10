@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 11:28:47 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 16:16:26 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/10 17:37:37 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ char	*ft_strdup(char const *s);
 char	*ft_strcpy(char *dest, char const *src);
 char	*ft_strncpy(char *dest, char const *src, size_t n);
 char	*ft_strcat(char *s1, char const *s2);
+char	*ft_strncat(char *s1, char const *s2, size_t n);
+char	*ft_strchr(char const *s, int c);
+char	*ft_strrchr(char const *s, int c);:=
 int		ft_strcmp(char const *s1, char const *s2);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 int		ft_isalpha(int c);

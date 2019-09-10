@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 14:50:46 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 17:23:38 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/10 16:41:29 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/10 17:08:58 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+char	*ft_strrchr(char const *s, int c)
 {
-	if (c >= 0 && c <= 127)
+	char *arr;
+
+	arr = s;
+	while (*arr)
 	{
-		return (c);
+		arr++;
 	}
-	return (0);
+	if (*arr == '\0' && c == '\0')
+	{
+		return (s);
+	}
+	while (arr >= s)
+	{
+		if (*arr == c)
+		{
+			return (arr);
+		}
+		arr--;
+	}
+	return (NULL);
 }
