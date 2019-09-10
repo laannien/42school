@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 11:26:59 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 11:34:38 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/10 11:29:30 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/10 11:35:18 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-size_t	ft_strlen(char const *s)
+int		main(void)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	ft_putchar('w');
+	ft_putchar('\n');
+	ft_putstr("Hello\n");
+	ft_putstr(ft_strdup("world\n"));
+	printf("%zu\n", ft_strlen("0123456789"));
+	return (0);
 }
