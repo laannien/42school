@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:35:31 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 17:10:15 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/10 18:21:04 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(char const *s, int c)
 {
 	char *arr;
 
-	arr = s;
+	arr = (char*)s;
 	while (*arr)
 	{
 		if (*arr == c)
