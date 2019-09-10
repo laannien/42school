@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 14:33:36 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 15:16:26 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/10 15:25:43 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/10 16:15:18 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+char	*ft_strcat(char *s1, char const *s2)
 {
-	if (c >= '0' && c <= '9')
+	char *arr;
+
+	arr = s1;
+	while (*arr)
 	{
-		return (c);
+		arr++;
 	}
-	return (0);
+	while (*s2)
+	{
+		*arr = *s2;
+		arr++;
+		s2++;
+	}
+	*arr = '\0';
+	return (s1);
 }

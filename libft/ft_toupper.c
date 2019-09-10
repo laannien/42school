@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 14:33:36 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 15:16:26 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/10 15:06:19 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/10 15:13:10 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int		ft_toupper(int c)
 {
-	if (c >= '0' && c <= '9')
+	char test;
+
+	test = c;
+	if (test >= 'a' && test <= 'z')
 	{
-		return (c);
+		return (c - ' ');
 	}
-	return (0);
+	return (c);
 }

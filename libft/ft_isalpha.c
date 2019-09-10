@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:22:03 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 14:29:14 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/10 15:17:31 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_isalpha(int c)
 {
-	char test;
-
-	test = c;
-	if ((test >= 'A' && test <= 'Z') || (test >= 'a' && test <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{
 		return (c);
 	}
