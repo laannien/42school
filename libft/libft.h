@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/12 18:28:40 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/12 19:56:44 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	*ft_memchr(void const *s, int c, size_t n);
-void	*ft_memcpy(void *dst, void const *src, size_t n)
+void	*ft_memcpy(void *dst, void const *src, size_t n);
+void	*ft_memccpy(void *dst, void const *src, int c, size_t n);
 char	*ft_strdup(char const *s);
 char	*ft_strcpy(char *dest, char const *src);
 char	*ft_strncpy(char *dest, char const *src, size_t n);
