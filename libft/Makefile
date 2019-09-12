@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/12 14:55:13 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/12 18:11:00 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = ft_isalnum.c\
 	  ft_isascii.c\
 	  ft_isdigit.c\
 	  ft_isprint.c\
+	  ft_isspace.c\
 	  ft_putchar.c\
 	  ft_putstr.c\
 	  ft_strcat.c\
@@ -32,7 +33,9 @@ SRC = ft_isalnum.c\
 	  ft_tolower.c\
 	  ft_toupper.c\
 	  ft_strstr.c\
-	  ft_strnstr.c
+	  ft_strnstr.c\
+	  ft_memchr.c\
+	  ft_memcpy.c
 HEAD = libft.h
 OFILE = ${SRC:.c=.o}
 
