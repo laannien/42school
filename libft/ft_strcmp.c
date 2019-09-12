@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:00:28 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 18:58:09 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/12 12:49:40 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int		ft_strcmp(char const *s1, char const *s2)
 {
-	while (*s1 == *s2 && *s1 != '\0' && *s2 != '\0')
+	unsigned char *p1;
+	unsigned char *p2;
+
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while (*p1 == *p2 && *p1 && *p2)
 	{
-		s1++;
-		s2++;
+		p1++;
+		p2++;
 	}
-	return (*s1 - *s2);
+	return (*p1 - *p2);
 }

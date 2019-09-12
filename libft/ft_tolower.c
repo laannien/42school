@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 15:13:51 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 15:14:58 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/12 13:01:15 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int		ft_tolower(int c)
 {
-	char test;
-
-	test = c;
-	if (test >= 'A' && test <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (c + ' ');
 	}
