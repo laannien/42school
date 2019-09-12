@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/10 18:44:33 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/12 14:55:13 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,27 +30,11 @@ SRC = ft_isalnum.c\
 	  ft_strncpy.c\
 	  ft_strrchr.c\
 	  ft_tolower.c\
-	  ft_toupper.c
+	  ft_toupper.c\
+	  ft_strstr.c\
+	  ft_strnstr.c
 HEAD = libft.h
-OFILE = ft_isalnum.o\
-	   	ft_isalpha.o\
-	  	ft_isascii.o\
-	 	ft_isdigit.o\
-	  	ft_isprint.o\
-		ft_putchar.o\
-		ft_putstr.o\
-		ft_strcat.o\
-		ft_strchr.o\
-		ft_strcmp.o\
-		ft_strcpy.o\
-		ft_strdup.o\
-		ft_strlen.o\
-		ft_strncat.o\
-		ft_strncmp.o\
-		ft_strncpy.o\
-		ft_strrchr.o\
-		ft_tolower.o\
-		ft_toupper.o
+OFILE = ${SRC:.c=.o}
 
 all: $(NAME)
 
