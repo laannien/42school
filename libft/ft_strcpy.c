@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 12:07:53 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 18:49:02 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/12 12:10:55 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 char	*ft_strcpy(char *dest, char const *src)
 {
-	while (*src != '\0')
+	size_t i;
+	
+	i = 0;
+	while (src[i] != '\0')
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[i] = src[i];
+		i++;
 	}
-	*dest = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

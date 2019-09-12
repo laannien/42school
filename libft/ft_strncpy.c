@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 12:54:24 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 13:18:05 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/12 12:23:34 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@ char	*ft_strncpy(char *dest, char const *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*src != '\0' && i < n)
+		while (*src && i < n)
 		{
-			*dest = *src;
-			dest++;
+			dest[i] = *src;
 			src++;
+			i++;
 		}
-		else
+		while (i < n)
 		{
-			*dest = '\0';
-			dest++;
+			dest[i] = '\0';
+			i++;
 		}
-		i++;
 	}
 	return (dest);
 }
