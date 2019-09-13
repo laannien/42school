@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/12 18:47:59 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/13 11:37:44 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRC = ft_isalnum.c\
 	  ft_strnstr.c\
 	  ft_memchr.c\
 	  ft_memcpy.c\
-	  ft_memccpy.c
+	  ft_memccpy.c\
+	  ft_memcmp.c
 HEAD = libft.h
 OFILE = ${SRC:.c=.o}
 

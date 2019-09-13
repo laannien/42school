@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/12 19:56:44 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/13 11:34:22 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_memcmp(void const *s1, void const *s2, size_t n);
 size_t	ft_strlen(char const *s);
 
 #endif
