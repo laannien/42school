@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 11:40:49 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/13 13:15:01 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/13 13:27:58 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/13 13:38:36 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, void const *src, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+	unsigned char *res;
 
-	if (src == 0 && dst == 0)
-		return (dst);
-	d = (unsigned char*)dst;
-	s = (unsigned char*)src;
-	if (src < dst)
+	res = (unsigned char*)s;
+	while (n > 0)
 	{
-		i = len;
-		while (i-- > 0)
-			d[i] = s[i];
+		n--;
+		res[n] = 0;
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
 }
