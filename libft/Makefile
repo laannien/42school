@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/13 11:37:44 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/13 12:16:24 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,16 +37,19 @@ SRC = ft_isalnum.c\
 	  ft_memchr.c\
 	  ft_memcpy.c\
 	  ft_memccpy.c\
-	  ft_memcmp.c
+	  ft_memcmp.c\
+	  ft_memmove.c
 HEAD = libft.h
 OFILE = ${SRC:.c=.o}
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(GCCF) -c $(SRC) -I $(HEAD)
+$(NAME): $(OFILE) $(HEAD)
 	ar rc $(NAME) $(OFILE)
 	ranlib $(NAME)
+
+.c.o: 
+	$(GCCF) -c $<
 
 .PHONY: clean
 clean:
