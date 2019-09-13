@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/13 14:33:12 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/13 14:46:08 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRC = ft_isalnum.c\
 	  ft_bzero.c\
 	  ft_putchar_fd.c\
 	  ft_putstr_fd.c\
-	  ft_putendl_fd.c
+	  ft_putendl_fd.c\
+	  ft_putendl.c
 HEAD = libft.h
 OFILE = ${SRC:.c=.o}
 
