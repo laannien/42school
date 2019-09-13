@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 11:29:30 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/10 14:49:19 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/13 15:18:20 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/13 16:45:23 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		main(void)
+int		ft_check_min_int(int n, int fd)
 {
-	ft_putchar('w');
-	ft_putchar('\n');
-	ft_putstr("Hello\n");
-	ft_putstr(ft_strdup("world\n"));
-	printf("%zu\n", ft_strlen("0123456789"));
-	printf("%d\n", ft_isalnum(-55));
-	return (0);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2", fd);
+		n = 147483648;
+	}
+	else
+	{
+		ft_putchar_fd('-', fd);
+		n = n * -1;
+	}
+	return (n);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	char symb;
+
+	if (n < 0)
+	{
+		n = ft_check_min_int(n, fd);
+	}
+	if (n > 0)
+	{
+		symb = n % 10 + '0';
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(symb, fd);
+	}
 }
