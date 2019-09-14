@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 15:28:43 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/14 16:10:42 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/14 16:35:24 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/14 17:01:58 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *result;
+	size_t		size;
+	char		*result;
 
-	if (size > size + 1)
+	if (!s1 || !s2)
 	{
 		return (NULL);
 	}
-	result = (char*)malloc(sizeof(char) * (size + 1));
+	size = ft_strlen(s1) + ft_strlen(s2);
+	result = (char*)malloc(sizeof(*s1) * (size + 1));
 	if (!result)
 	{
 		return (NULL);
 	}
-	ft_bzero(result, size + 1);
+	*result = 0;
+	ft_strcat(result, s1);
+	ft_strcat(result, s2);
 	return (result);
 }
