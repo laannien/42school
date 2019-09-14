@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/14 14:51:38 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/14 15:01:40 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_memdel(void **ap);
 void	*ft_memchr(void const *s, int c, size_t n);
 void	*ft_memcpy(void *dst, void const *src, size_t n);
 void	*ft_memccpy(void *dst, void const *src, int c, size_t n);
