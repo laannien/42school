@@ -32,9 +32,9 @@ ft_tolower	    Part1		2	+
 ft_toupper	    Part1		2	+
 ft_isalnum	    Part1		3	+
 ft_lstdelone	Bonus	    3
-ft_memalloc	    Part2		3
+ft_memalloc	    Part2		3	+
 ft_memccpy	    Part1		3	+
-ft_memdel	    Part2		3
+ft_memdel	    Part2		3	+
 ft_memmove	    Part1		3	+
 ft_power	    Expansion	3
 ft_putendl_fd	Part2	    3	+
