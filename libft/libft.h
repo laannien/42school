@@ -6,7 +6,7 @@
 /*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/14 15:41:57 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/14 16:02:37 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ char	*ft_itoa(int n);
 int		ft_atoi(char const *str);
 int		ft_strcmp(char const *s1, char const *s2);
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+int		ft_strequ(char const *s1, char const *s2);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
