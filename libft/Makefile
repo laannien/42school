@@ -61,7 +61,8 @@ SRC = ft_isalnum.c\
 	  ft_strequ.c\
 	  ft_strnequ.c\
 	  ft_strsub.c\
-	  ft_strjoin.c
+	  ft_strjoin.c\
+	  ft_strtrim.c
 OFILE = $(SRC:.c=.o)
 HEAD = libft.h
 
@@ -83,3 +84,11 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	$(GCCF) -fPIC -c $(SRC) -L $(HEAD)
+	$(GCCF) -shared -o libft.so $(OFILE)
+
+.PHONY: cleanso
+cleanso: clean
+	rm libft.so
