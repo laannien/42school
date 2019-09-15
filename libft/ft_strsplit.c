@@ -43,7 +43,7 @@ size_t	ft_word_len(char const *s, char c)
 		}
 		return (i);
 	}
-	return (NULL);
+	return (0);
 }
 
 size_t	ft_words(char const *s, char c)
@@ -57,7 +57,7 @@ size_t	ft_words(char const *s, char c)
 		counter = 0;
 		while (s[i] != '\0')
 		{
-			if (s[i] == c && s[i + 1] != c)
+			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			{
 				counter++;
 			}
@@ -65,7 +65,7 @@ size_t	ft_words(char const *s, char c)
 		}
 		return (counter);
 	}
-	return (NULL);
+	return (0);
 }
 
 char	**ft_strsplit(char const *s, char c)
@@ -80,13 +80,13 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		i = 0;
 		words = ft_words(s, c);
-		if (!(result = (char*)malloc(sizeof(*s) * words)))
+		if (!(result = (char**)malloc(sizeof(s) * words)))
 		{
 			free(result);
 			return (NULL);
 		}
 		j = 0;
-		while (s[i] != '\0')
+		while (s[i] != '\0' && j < words)
 		{
 			if (s[i] == c)
 			{
@@ -95,12 +95,12 @@ char	**ft_strsplit(char const *s, char c)
 			else
 			{
 				word_len = ft_word_len(&s[i], c);
-				if (!(*result = (char*)malloc(sizeof(*s) * (word_len + 1))))
+				if (!(*(result + j) = (char*)malloc(sizeof(*s) * (word_len + 1))))
 				{
-					free(*result);
+					free(*(result + j));
 					return (NULL);
 				}
-				result[j] = ft_fill_arr(*result, &s[i], c);
+				result[j] = ft_fill_arr(*(result + j), &s[i], c);
 				j++;
 				i = i + word_len;
 			}
