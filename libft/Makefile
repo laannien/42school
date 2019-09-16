@@ -6,7 +6,7 @@
 #    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/14 16:49:51 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/16 14:08:23 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ SRC = ft_isalnum.c\
 	  ft_strsub.c\
 	  ft_strjoin.c\
 	  ft_strtrim.c\
-	  ft_strsplit.c
+	  ft_strsplit.c\
+	  ft_strnlen.c\
+	  ft_strlcat.c
 OFILE = $(SRC:.c=.o)
 HEAD = libft.h
 
