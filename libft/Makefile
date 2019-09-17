@@ -65,7 +65,8 @@ SRC = ft_isalnum.c\
 	  ft_strtrim.c\
 	  ft_strsplit.c\
 	  ft_strnlen.c\
-	  ft_strlcat.c
+	  ft_strlcat.c\
+	  ft_lstnew.c
 OFILE = $(SRC:.c=.o)
 HEAD = libft.h
 

@@ -79,5 +79,6 @@ int				ft_memcmp(void const *s1, void const *s2, size_t n);
 size_t			ft_strlen(char const *s);
 size_t			ft_strnlen(char const *s, size_t maxlen);
 size_t			ft_strlcat(char *dst, char const *src, size_t size);
+t_list			*ft_lstnew(void const *content, size_t content_size);
 
 #endif
