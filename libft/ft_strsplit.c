@@ -105,12 +105,13 @@ char	**ft_strsplit(char const *s, char c)
 	if (s != NULL)
 	{
 		words = ft_words(s, c);
-		if (!(result = (char**)malloc(sizeof(s) * words)))
+		if (!(result = (char**)malloc(sizeof(s) * (words + 1))))
 		{
 			free(result);
 			return (NULL);
 		}
 		result = ft_fill_arr(result, s, c, words);
+		result[words] = NULL;
 		return (result);
 	}
 	return (NULL);
