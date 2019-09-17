@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/16 14:08:23 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/17 14:43:08 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ SRC = ft_isalnum.c\
 	  ft_strsplit.c\
 	  ft_strnlen.c\
 	  ft_strlcat.c\
-	  ft_lstnew.c
+	  ft_lstnew.c\
+	  ft_lstdelone.c
 OFILE = $(SRC:.c=.o)
 HEAD = libft.h
 
