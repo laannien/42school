@@ -35,10 +35,10 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		n = ft_check_min_int(n, fd);
 	}
-	if (n > 0)
+	if (n >= 10)
 	{
-		symb = n % 10 + '0';
 		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(symb, fd);
 	}
+	symb = n % 10 + '0';
+	ft_putchar_fd(symb, fd);
 }
