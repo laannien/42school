@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/17 14:42:51 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 14:53:37 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void			ft_strdel(char **as);
 void			ft_strclr(char *s);
 void			ft_memdel(void **ap);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			*ft_memchr(void const *s, int c, size_t n);
 void			*ft_memcpy(void *dst, void const *src, size_t n);
 void			*ft_memccpy(void *dst, void const *src, int c, size_t n);
