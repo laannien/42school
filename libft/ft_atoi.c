@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 11:21:43 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/14 12:56:59 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 17:58:47 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_return(unsigned long nb, int sign)
+static int		ft_return(unsigned long nb, int sign)
 {
 	if (nb > 2147483648)
 	{
@@ -28,7 +28,7 @@ int		ft_return(unsigned long nb, int sign)
 	return ((int)nb * sign);
 }
 
-int		ft_sign(char const *str)
+static int		ft_sign(char const *str)
 {
 	while (ft_isspace(*str) != 0)
 	{
@@ -41,7 +41,7 @@ int		ft_sign(char const *str)
 	return (1);
 }
 
-int		ft_atoi(char const *str)
+int				ft_atoi(char const *str)
 {
 	unsigned long	result;
 	int				sign;

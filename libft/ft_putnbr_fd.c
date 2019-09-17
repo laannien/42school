@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 15:18:20 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/13 16:45:23 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 18:10:53 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_check_min_int(int n, int fd)
+static int		ft_check_min_int(int n, int fd)
 {
 	if (n == -2147483648)
 	{
@@ -27,7 +27,7 @@ int		ft_check_min_int(int n, int fd)
 	return (n);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
 	char symb;
 

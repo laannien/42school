@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 17:53:07 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/13 18:09:37 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 18:11:58 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striter(char *s, void (*f)(char *))
 {
 	unsigned int i;
 
-	if (s != NULL)
+	if (s && f)
 	{
 		i = 0;
 		while (s[i] != '\0')

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 18:12:11 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/17 18:13:28 by uheirloo         ###   ########.fr       */
+/*   Created: 2019/09/17 16:08:59 by uheirloo          #+#    #+#             */
+/*   Updated: 2019/09/17 18:07:14 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char				*result;
-	unsigned int		i;
+	t_list *tmp;
 
-	if (s && f)
+	if (!lst || !(*f))
 	{
-		i = 0;
-		result = (char*)malloc(sizeof(*s) * (ft_strlen(s) + 1));
-		if (result != NULL)
+		return (NULL);
+	}
+	tmp = NULL;
+	if (lst)
+	{
+		tmp = (*f)(lst);
+		if (!tmp)
 		{
-			while (s[i] != '\0')
-			{
-				result[i] = (*f)(i, s[i]);
-				i++;
-			}
-			result[i] = '\0';
-			return (result);
+			free(tmp);
+			return (NULL);
+		}
+		else
+		{
+			tmp->next = ft_lstmap(lst->next, &(*f));
 		}
 	}
-	return (NULL);
+	return (tmp);
 }

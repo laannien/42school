@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uheirloo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 16:35:24 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/16 15:27:12 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 18:16:25 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_fill_str(char *dest, char const *str, char c)
+static char		*ft_fill_str(char *dest, char const *str, char c)
 {
 	size_t	i;
 
@@ -30,7 +30,7 @@ char	*ft_fill_str(char *dest, char const *str, char c)
 	return (NULL);
 }
 
-size_t	ft_word_len(char const *s, char c)
+static size_t	ft_word_len(char const *s, char c)
 {
 	size_t i;
 
@@ -46,7 +46,8 @@ size_t	ft_word_len(char const *s, char c)
 	return (0);
 }
 
-char	**ft_fill_arr(char **result, char const *s, char c, size_t words)
+static char		**ft_fill_arr(char **result, char const *s, char c, \
+								size_t words)
 {
 	size_t	i;
 	size_t	j;
@@ -75,7 +76,7 @@ char	**ft_fill_arr(char **result, char const *s, char c, size_t words)
 	return (result);
 }
 
-size_t	ft_words(char const *s, char c)
+static size_t	ft_words(char const *s, char c)
 {
 	size_t i;
 	size_t counter;
@@ -97,7 +98,7 @@ size_t	ft_words(char const *s, char c)
 	return (0);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**result;
 	size_t	words;

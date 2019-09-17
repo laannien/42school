@@ -6,7 +6,7 @@
 #    By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 17:53:00 by uheirloo          #+#    #+#              #
-#    Updated: 2019/09/17 16:05:39 by uheirloo         ###   ########.fr        #
+#    Updated: 2019/09/17 17:32:01 by uheirloo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SRC = ft_isalnum.c\
 	  ft_lstdelone.c\
 	  ft_lstdel.c\
 	  ft_lstadd.c\
-	  ft_lstiter.c
+	  ft_lstiter.c\
+	  ft_lstmap.c
 OFILE = $(SRC:.c=.o)
 HEAD = libft.h
 

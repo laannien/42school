@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/17 16:06:00 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/17 17:31:48 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ size_t			ft_strlen(char const *s);
 size_t			ft_strnlen(char const *s, size_t maxlen);
 size_t			ft_strlcat(char *dst, char const *src, size_t size);
 t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
