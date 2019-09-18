@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:17:48 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/18 12:13:44 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/18 14:28:47 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		new->content = NULL;
 		new->content_size = 0;
+		new->next = NULL;
 	}
 	else
 	{
