@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 11:21:43 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/17 17:58:47 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/18 12:45:50 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		ft_return(unsigned long nb, int sign)
 {
-	if (nb > 2147483648)
+	if (nb > 9223372036854775807)
 	{
 		if (sign == 1)
 		{
