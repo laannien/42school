@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:08:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/17 17:31:48 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/18 14:10:38 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
+void			ft_strrev(char *src);
 void			ft_memdel(void **ap);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstpushback(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void			*ft_memchr(void const *s, int c, size_t n);
 void			*ft_memcpy(void *dst, void const *src, size_t n);
@@ -80,6 +82,7 @@ int				ft_isspace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_memcmp(void const *s1, void const *s2, size_t n);
+int				*ft_bubblesort(int *src, int size);
 size_t			ft_strlen(char const *s);
 size_t			ft_strnlen(char const *s, size_t maxlen);
 size_t			ft_strlcat(char *dst, char const *src, size_t size);
