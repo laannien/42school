@@ -10,15 +10,56 @@
 	},
 	"tasks": [
 	  {
-		"label": "build with make",
+		"label": "gcc build active file",
 		"type": "shell",
-		"command": "make",
+		"command": "/usr/bin/gcc",
 		"args": [
+			"-g",
+			"-Wall",
+			"-Wextra",
+			"-Werror",
+			"${workspaceFolder}/GNL/${relativeFile}",
+			"-o",
+			"${workspaceFolder}/GNL/${relativeFileDirname}/a.out"
 		],
-		"group": {
-		  "kind": "build",
-		  "isDefault": true
-		}
-	  }
-	]
-  }
+		"options": {
+			"cwd": "usr/bin"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": "build"
+	  },
+	  {
+		"type": "shell",
+		"label": "gcc build active folder",
+		"command": "${workspaceFolder}/.vscode/compile.sh",
+		"args": [
+			"${workspaceFolder}/GNL/${relativeFileDirname}"
+		],
+		"options": {
+			"cwd": "/usr/bin"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": "build"
+	},
+	{
+		"type": "shell",
+		"label": "gcc build project",
+		"command": "${workspaceFolder}/.vscode/compile.sh",
+		"args": [
+			"${workspaceFolder}"
+		],
+		"options": {
+			"cwd": "/usr/bin"
+		},
+		"problemMatcher": [
+			"$gcc"
+		],
+		"group": "build"
+	}
+]
+}
+

@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 16:02:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/25 13:21:11 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/25 17:51:05 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ int		ft_read_file(const int fd, t_line *current, char **line)
 	}
 	if (length < 0)
 		return (-1);
-	if (length == 0 && (current->content == '\0'))
-		return (0);
 	current->content = ft_get_line(current->content, line);
 	if (length == 0)
 		return (0);
@@ -109,18 +107,16 @@ int		get_next_line(const int fd, char **line)
 {
 	static t_line	*begin;
 	t_line			*current;
-	int				length;
+	/*int				ret;*/
 
+	if (fd < 0 || read(fd, NULL, 0) == -1 || BUFF_SIZE <= 0 ||\
+		line == NULL)
+		return (-1);
 	if (begin == NULL)
 	{
 		current = ft_new_elem(fd);
 		begin = current;
 	}
 	current = ft_get_current(begin, fd);
-	length = ft_read_file(fd, current, line);
-	if (length < 0)
-		return (-1);
-	if (length == 0)
-		return (0);
-	return (1);
+	return (ft_read_file(fd, current, line));
 }
