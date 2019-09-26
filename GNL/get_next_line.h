@@ -22,7 +22,9 @@
 
 typedef struct	s_line
 {
+	// Файловый дескриптор
 	int				fd;
+	// Оставшийся контент, прочитанный read-ом, но необработанный в текущем вызове функции
 	char			*content;
 	struct s_line	*next;
 }				t_line;

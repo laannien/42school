@@ -12,6 +12,9 @@
 
 #include "get_next_line.h"
 
+// Записывает строку (до \n|\0) в line и возвращает остаток
+// Если мы дошли до \n возвращаем остаток после \n
+// Если мы дошли до \0 возвращаем NULL
 char	*ft_get_line(char *content, char **line)
 {
 	char	*tmp;
@@ -81,40 +84,63 @@ t_line	*ft_get_current(t_line *begin, const int fd)
 	return (begin->next);
 }
 
-int		ft_read_file(const int fd, t_line *current, char **line)
+// Основная логика работы get_next_line
+int		ft_read_file(t_line *current, char **line)
 {
 	int		length;
 	char	buffer[BUFF_SIZE + 1];
 	char	*tmp;
 
 	tmp = NULL;
-	while ((length = read(fd, buffer, BUFF_SIZE)) > 0)
+	// Если в текущем остатке нет \n
+	if (!(ft_strchr(current->content, '\n')))
 	{
-		buffer[length] = '\0';
-		tmp = ft_strjoin(current->content, buffer);
-		free(current->content);
-		current->content = tmp;
-		if (ft_strchr(buffer, '\n'))
-			break ;
+		// Читаем содержимое файла в буфер пока не дойдём до конца, либо до буфера с \n
+		while ((length = read(current->fd, buffer, BUFF_SIZE)) > 0)
+		{
+			// Завершаем прочитанную строку \0
+			buffer[length] = '\0';
+			// Прибавляем к остатку прочитанный буфер
+			tmp = ft_strjoin(current->content, buffer);
+			// Если не удалось выделить память, возвращаем ошибку
+			if (tmp == NULL)
+				return (-1);
+			free(current->content);
+			// Записываем новый остаток
+			current->content = tmp;
+			// Выходим из цикла если в буфере есть \n
+			if (ft_strchr(buffer, '\n'))
+				break ;
+		}
+		if (length < 0)
+			return (-1);
+		if (length == 0 && (current->content == '\0'))
+			return (0);
 	}
-	if (length < 0)
-		return (-1);
-	if (length == 0 && (current->content == NULL || current->content == '\0'))
+	if (current->content == '\0')
 		return (0);
+	// Пишем первую строку из остатка в line и возвращаем остаток в остаток :)
 	current->content = ft_get_line(current->content, line);
 //	if (length == 0 && current->content)
 //	{
 //		ft_strdel(&current->content);
 //		return (1);
 //	}
-	if (length == 0 && (current->content == NULL || current->content == '\0'))
-		return (0);
+
+	// if (current->content == NULL || current->content == '\0')
+	// 	return (0);
 	return (1);
 }
 
+// Осуществляет построчное чтение файла, записывая текущую строку в line
+// При последующем вызове мы получаем следующую строку файла
+// Возвращает 1 если мы записали в line строку
+// Возвращает 0 если мы стояли на конце файла и ничего не получили
+// Вовращает -1 если была ошибка
 int		get_next_line(const int fd, char **line)
 {
-	static t_line	*begin;
+	// Список нужен для хранения данных с разных файлов
+	static t_line	*begin; // Первый элемент списка
 	t_line			*current;
 
 	if (fd < 0 || read(fd, NULL, 0) == -1 || BUFF_SIZE <= 0 ||\
@@ -122,9 +148,8 @@ int		get_next_line(const int fd, char **line)
 		return (-1);
 	if (begin == NULL)
 	{
-		current = ft_new_elem(fd);
-		begin = current;
+		begin = ft_new_elem(fd);
 	}
 	current = ft_get_current(begin, fd);
-	return (ft_read_file(fd, current, line));
+	return (ft_read_file(current, line));
 }
