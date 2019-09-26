@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 16:02:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/25 17:51:05 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/26 17:51:41 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ char	*ft_get_line(char *content, char **line)
 	if (content[i] == '\0')
 	{
 		*line = content;
+//		if (*content == '\0')
 		ft_strdel(&content);
 		return (NULL);
 	}
-	else
+	else if (content[i] == '\n')
 	{
 		tmp = ft_strsub(content, 0, i);
 		*line = tmp;
@@ -36,6 +37,7 @@ char	*ft_get_line(char *content, char **line)
 		content = tmp;
 		return (content);
 	}
+	return (content);
 }
 
 t_line	*ft_new_elem(int fd)
@@ -97,8 +99,15 @@ int		ft_read_file(const int fd, t_line *current, char **line)
 	}
 	if (length < 0)
 		return (-1);
+	if (length == 0 && (current->content == NULL || current->content == '\0'))
+		return (0);
 	current->content = ft_get_line(current->content, line);
-	if (length == 0)
+//	if (length == 0 && current->content)
+//	{
+//		ft_strdel(&current->content);
+//		return (1);
+//	}
+	if (length == 0 && (current->content == NULL || current->content == '\0'))
 		return (0);
 	return (1);
 }
@@ -107,7 +116,6 @@ int		get_next_line(const int fd, char **line)
 {
 	static t_line	*begin;
 	t_line			*current;
-	/*int				ret;*/
 
 	if (fd < 0 || read(fd, NULL, 0) == -1 || BUFF_SIZE <= 0 ||\
 		line == NULL)

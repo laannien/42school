@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 16:02:09 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/25 17:51:04 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/26 17:15:25 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ typedef struct	s_line
 }				t_line;
 
 int				get_next_line(const int fd, char **line);
-int				ft_read_file(const int fd, t_line *current, char **line);
-t_line			*ft_get_current(t_line *begin, const int fd);
-t_line			*ft_new_elem(int fd);
-char			*ft_get_line(char *content, char **line);
+//int				ft_read_file(const int fd, t_line *current, char **line);
+//t_line			*ft_get_current(t_line *begin, const int fd);
+//t_line			*ft_new_elem(int fd);
+//char			*ft_get_line(char *content, char **line, int length);
 
 #endif
