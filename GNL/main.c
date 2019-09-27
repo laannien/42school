@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 12:20:16 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/25 14:37:05 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/27 15:45:18 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,22 @@ int				main(int argc, char **argv)
 	result = NULL;
 	gnl = get_next_line(fd1, &result);
 	printf("%d %s\n", gnl, result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-	get_next_line(fd1, &result);
-	printf("%s\n", result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-	get_next_line(fd1, &result);
-	printf("%s\n", result);
-	ft_strdel(&result);
 	gnl = get_next_line(fd1, &result);
 	printf("%d %s\n", gnl, result);
+	gnl = get_next_line(fd1, &result);
+	printf("%d %s\n", gnl, result);
+	gnl = get_next_line(fd1, &result);
+	printf("%d %s\n", gnl, result);
+	get_next_line(fd2, &result);
+	printf("%s\n", result);
+	get_next_line(fd2, &result);
+	printf("%s\n", result);
+	get_next_line(fd2, &result);
+	printf("%s\n", result);
+	get_next_line(fd2, &result);
+	printf("%s\n", result);
+//	ft_strdel(&result);
+
 	close(fd1);
 	close(fd2);
 	return (0);

@@ -6,13 +6,13 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 16:02:13 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/26 17:51:41 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/27 16:38:02 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_get_line(char *content, char **line)
+static char		*ft_get_line(char *content, char **line)
 {
 	char	*tmp;
 	int		i;
@@ -24,8 +24,6 @@ char	*ft_get_line(char *content, char **line)
 	if (content[i] == '\0')
 	{
 		*line = content;
-//		if (*content == '\0')
-		ft_strdel(&content);
 		return (NULL);
 	}
 	else if (content[i] == '\n')
@@ -40,7 +38,7 @@ char	*ft_get_line(char *content, char **line)
 	return (content);
 }
 
-t_line	*ft_new_elem(int fd)
+static t_line	*ft_new_elem(int fd)
 {
 	t_line	*new;
 
@@ -51,19 +49,19 @@ t_line	*ft_new_elem(int fd)
 	}
 	else
 	{
-		new->content = (char*)malloc(sizeof(char) * (BUFF_SIZE + 1));
+		new->content = (char*)malloc(sizeof(char) * 1);
 		if (!new->content)
 		{
 			return (NULL);
 		}
-		ft_bzero(new->content, BUFF_SIZE + 1);
+		ft_bzero(new->content, 1);
 		new->fd = fd;
 		new->next = NULL;
 	}
 	return (new);
 }
 
-t_line	*ft_get_current(t_line *begin, const int fd)
+static t_line	*ft_get_current(t_line *begin, const int fd)
 {
 	while (begin->next)
 	{
@@ -81,38 +79,35 @@ t_line	*ft_get_current(t_line *begin, const int fd)
 	return (begin->next);
 }
 
-int		ft_read_file(const int fd, t_line *current, char **line)
+static int		ft_read_file(t_line *current, char **line)
 {
 	int		length;
 	char	buffer[BUFF_SIZE + 1];
 	char	*tmp;
 
 	tmp = NULL;
-	while ((length = read(fd, buffer, BUFF_SIZE)) > 0)
+	if (!(tmp = ft_strchr(current->content, '\n')))
 	{
-		buffer[length] = '\0';
-		tmp = ft_strjoin(current->content, buffer);
-		free(current->content);
-		current->content = tmp;
-		if (ft_strchr(buffer, '\n'))
-			break ;
+		while ((length = read(current->fd, buffer, BUFF_SIZE)) > 0)
+		{
+			buffer[length] = '\0';
+			if (!(tmp = ft_strjoin(current->content, buffer)))
+				return (-1);
+			free(current->content);
+			current->content = tmp;
+			if (ft_strchr(buffer, '\n'))
+				break ;
+		}
+		if (length < 0)
+			return (-1);
+		if (length == 0 && current->content[0] == '\0')
+			return (0);
 	}
-	if (length < 0)
-		return (-1);
-	if (length == 0 && (current->content == NULL || current->content == '\0'))
-		return (0);
 	current->content = ft_get_line(current->content, line);
-//	if (length == 0 && current->content)
-//	{
-//		ft_strdel(&current->content);
-//		return (1);
-//	}
-	if (length == 0 && (current->content == NULL || current->content == '\0'))
-		return (0);
 	return (1);
 }
 
-int		get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static t_line	*begin;
 	t_line			*current;
@@ -126,5 +121,7 @@ int		get_next_line(const int fd, char **line)
 		begin = current;
 	}
 	current = ft_get_current(begin, fd);
-	return (ft_read_file(fd, current, line));
+	if (current->content == NULL)
+		return (0);
+	return (ft_read_file(current, line));
 }
