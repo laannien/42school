@@ -1,0 +1,5 @@
+traceroute slash26.org
+
+First IP - local IP
+Second IP - routing device in local net IP  == NAT IP(what we need)
+Third IP - external device IP

@@ -1,0 +1,37 @@
+systemctl list-unit-files --type=service | grep "enabled" | awk -F".service" '{print $1}'
+
+accounts-daemon
+anacron
+apparmor
+autovt@
+avahi-daemon
+bluetooth
+console-setup
+cron
+dbus-fi.w1.wpa_supplicant1
+dbus-org.bluez
+dbus-org.freedesktop.Avahi
+dbus-org.freedesktop.ModemManager1
+dbus-org.freedesktop.nm-dispatcher
+dbus-org.freedesktop.timesync1
+getty@
+keyboard-setup
+ModemManager
+network-manager
+networking
+NetworkManager-dispatcher
+NetworkManager-wait-online
+NetworkManager
+pppd-dns
+rsyslog
+ssh
+sshd
+switcheroo-control
+syslog
+systemd-fsck-root
+systemd-timesyncd
+udisks2
+unattended-upgrades
+wpa_supplicant
+
+All of them are daemons

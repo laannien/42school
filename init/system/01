@@ -1,0 +1,3 @@
+cat /etc/debian_version
+
+10.1

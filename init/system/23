@@ -1,0 +1,15 @@
+Log in to server
+
+Login to system as root superuser
+ssh root@server_ip_adress
+
+Create new user account
+adduser username
+
+Add password
+
+Add user to sudo group if needed
+sudo usermod -aG sudo username
+
+Switch to new user
+su - username
