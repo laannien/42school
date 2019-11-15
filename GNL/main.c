@@ -6,7 +6,7 @@
 /*   By: uheirloo <uheirloo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 12:20:16 by uheirloo          #+#    #+#             */
-/*   Updated: 2019/09/27 15:45:18 by uheirloo         ###   ########.fr       */
+/*   Updated: 2019/09/28 14:39:11 by uheirloo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,33 @@
 
 int				main(int argc, char **argv)
 {
-	int		fd1;
-	int		fd2;
-	int		gnl;
-	char	*result;
+		 int		fd1;
+		 int		fd2;
+		 int		gnl;
+		 char	*result;
 
-	(void)argc;
-	fd1 = open(argv[1], O_RDONLY);
-	fd2 = open(argv[2], O_RDONLY);
-	result = NULL;
-	gnl = get_next_line(fd1, &result);
-	printf("%d %s\n", gnl, result);
-	gnl = get_next_line(fd1, &result);
-	printf("%d %s\n", gnl, result);
-	gnl = get_next_line(fd1, &result);
-	printf("%d %s\n", gnl, result);
-	gnl = get_next_line(fd1, &result);
-	printf("%d %s\n", gnl, result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-	get_next_line(fd2, &result);
-	printf("%s\n", result);
-//	ft_strdel(&result);
-
-	close(fd1);
-	close(fd2);
-	return (0);
+		 (void)argc;
+		 fd1 = open(argv[1], O_RDONLY);
+		 fd2 = open(argv[2], O_RDONLY);
+		 result = NULL;
+		 gnl = get_next_line(fd1, &result);
+		 printf("%d %s\n", gnl, result);
+		 gnl = get_next_line(fd2, &result);
+		 printf("%d %s\n", gnl, result);
+		// gnl = get_next_line(fd1, &result);
+		// printf("%d %s\n", gnl, result);
+		// gnl = get_next_line(fd1, &result);
+		// printf("%d %s\n", gnl, result);
+		// get_next_line(fd2, &result);
+		// printf("%s\n", result);
+		// get_next_line(fd2, &result);
+		// printf("%s\n", result);
+		// get_next_line(fd2, &result);
+		// printf("%s\n", result);
+		// get_next_line(fd2, &result);
+		// printf("%s\n", result);
+		 //free(&result);
+		 close(fd1);
+		 close(fd2);
+		return (0);
 }

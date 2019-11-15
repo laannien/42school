@@ -1,0 +1,11 @@
+{
+	"C_Cpp.errorSquiggles": "Enabled",
+
+	"files.associations": 
+	{
+		"ft_get_next_line.h": "c",
+		"stdio.h": "c",
+		"string.h": "c"
+	},
+	"debug.node.autoAttach": "off"
+}
