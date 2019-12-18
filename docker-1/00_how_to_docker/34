@@ -1,0 +1,3 @@
+docker-machine rm -y Aiur
+
+# Deleting Aiur virtual machine

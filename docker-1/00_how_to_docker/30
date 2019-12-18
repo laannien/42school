@@ -1,0 +1,3 @@
+docker service scale marines=20
+
+# Making 20 replicas of running marine service

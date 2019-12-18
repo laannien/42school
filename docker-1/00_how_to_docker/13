@@ -1,0 +1,6 @@
+docker exec spawning-pool env
+
+# Check container variables
+# Alternative way to check them:
+# docker inspect -f '{{.Config.Env}}' spawning-pool
+# but my way's output looks better

@@ -1,0 +1,4 @@
+docker service create -d --replicas=2 -e OC_USERNAME=Vasya -e OC_PASSWD=Village --name marines --network overmind 42school/marine-squad
+
+# Launching service 42school/marine-squad under name marines on overmind network
+# It has 2 replicas (2 tasks) and its env.variables were changed for access to orbital-command service

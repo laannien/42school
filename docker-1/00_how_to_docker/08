@@ -1,0 +1,5 @@
+docker run -it --rm alpine /bin/sh
+
+# Launching new container (docker run) alpine with already running STDIN in pseudo-terminal (TTY) (-it)
+# Container will delete itself after exit (--rm)
+# Command, running shell in this container (/bin/sh)

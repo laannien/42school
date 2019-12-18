@@ -1,0 +1,3 @@
+docker ps
+
+# List of currently active containers

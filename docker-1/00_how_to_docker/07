@@ -1,0 +1,5 @@
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' overlord
+
+# Getting IP address of container. Possible options :
+# docker inspect -f '{{.NetworkSettings.IPAddress}}' overlord
+# docker inspect overlord | grep "IPAddress"

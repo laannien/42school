@@ -1,0 +1,3 @@
+docker service ls
+
+# List of services

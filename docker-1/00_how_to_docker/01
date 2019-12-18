@@ -1,0 +1,3 @@
+docker-machine create --driver virtualbox Char
+
+# Creating new machine on VirtualBox driver with name Char

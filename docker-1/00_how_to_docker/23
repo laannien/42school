@@ -1,0 +1,3 @@
+docker network create --internal -d overlay overmind
+
+# Creating internal network overmind, which is overlay-typed (--driver overlay) and can work with multi-docker-hosts with running Engines

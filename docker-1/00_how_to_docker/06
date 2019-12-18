@@ -1,0 +1,4 @@
+docker run -d -p 5000:80 --restart=always --name=overlord nginx
+
+# Downloading and running nginx with name overlord in background (flag -d). 
+# Connecting port 80 to 5000 and making process restart every time it stops (unless it's manually stopped)

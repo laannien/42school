@@ -1,0 +1,5 @@
+docker container logs -f spawning-pool
+
+# Viewing real-time logging of spawning-pool container. Another option:
+# docker logs -f spawning-pool
+# The key here is -f (-- follow) flag, that is showing real-time output

@@ -1,0 +1,4 @@
+docker service create -d --name orbital-command --network overmind --env RABBITMQ_DEFAULT_USER=Vasya --env RABBITMQ_DEFAULT_PASS=Village rabbitmq
+
+# Launching new service rabbitmq under name orbital-command attached to network overmind with new enviroment variables (user and password)
+# Service created in detached mode for exiting immediately instead of waiting for the service to converge

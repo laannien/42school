@@ -1,0 +1,8 @@
+apt-get update -y
+apt-get upgrade -y
+apt-get install build-essential -y
+apt-get install git -y
+
+# At first you should run container debian:
+# docker run -it --rm debian
+# Then inside you updating and upgrading all packages, installing copmiler (inside built-essential package) and git

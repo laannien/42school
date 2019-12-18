@@ -1,0 +1,5 @@
+docker image rm -f $(docker image ls -q)
+
+# Removing all images
+# To get list of images ID, running docker container ls --quiet mode
+# To remove even running images use --force flag

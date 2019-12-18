@@ -1,0 +1,5 @@
+docker service rm $(docker service ls -q)
+
+# Stopping all services of swarm
+# To get list of all services we are running command docker service ls
+# To get only useful arguments for rm command, we are running command inside in --quiet mode

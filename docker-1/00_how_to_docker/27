@@ -1,0 +1,6 @@
+docker service logs -f $(docker service ps engineering-bay -f "name=engineering-bay.1" -q)
+
+# Showing real-time logs of first engineering-bay task (real-time thanks to -f flag)
+# To cut only first task we run docker service ps engineering-bay to see list of tasks and then filter the output with -f flag
+# To be able to run these 2 commands in a same time, we need to set the output of docker ps as one argument
+# For this purpose we run this command with -q (--quiet) flag

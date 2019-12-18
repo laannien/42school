@@ -1,0 +1,5 @@
+docker container rm -f $(docker container ls -q)
+
+# Removing all containers
+# To get list ov containers ID, running docker container ls --quiet mode
+# To remove even running containers use --force flag

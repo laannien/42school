@@ -1,0 +1,4 @@
+docker run -it -d --name lair -p 8080:80 --link spawning-pool:mysql wordpress
+
+# Running wordpress container under the name lair in background, connecting 80 port of the container to VM's 8080 port 
+# and linking wordpress container with spawning-pool container
